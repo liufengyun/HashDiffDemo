@@ -1,4 +1,5 @@
-h2. HashDiffDemo
+HashDiffDemo
+=========
 
 HashDiffDemo is a demo application for the gem [HashDiff](https://github.com/liufengyun/hashdiff).
 

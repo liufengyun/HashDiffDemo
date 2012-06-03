@@ -1,3 +1,42 @@
-%h3 Home
-- @users.each do |user|
-  %p User: #{link_to user.name, user}
+%legend Input two json or yaml to be compared
+
+%ul.nav.nav-tabs
+  %li.active
+    %a{"data-toggle" => "tab", :href => "#json-tab"} JSON
+  %li
+    %a{"data-toggle" => "tab", :href => "#yaml-tab"} YAML
+
+.tab-content
+  #json-tab.tab-pane.active
+    .row-fluid
+      .span6
+        %p
+          %span.label json one
+        %textarea#json-one-area{:style => "width:95%;min-height:300px;"}=@json1
+      .span6
+        %p
+          %span.label json two
+        %textarea#json-two-area{:style => "width:95%;min-height:300px;"}=@json2
+    %hr
+    %button#json-compare-btn.btn.btn-info Compare JSON
+    =image_tag "spinner.gif", :class => "hide", :id => "json-spinner"
+    #json-compare-results{:style => "margin-top:10px;"}
+  #yaml-tab.tab-pane
+    .row-fluid
+      .span6
+        %p
+          %span.label yaml one
+        %textarea#yaml-one-area{:style => "width:95%;min-height:300px;"}=@yaml1
+      .span6
+        %p
+          %span.label yaml two
+        %textarea#yaml-two-area{:style => "width:95%;min-height:300px;"}=@yaml2
+    %hr
+    %button#yaml-compare-btn.btn.btn-info Compare YAML
+    =image_tag "spinner.gif", :class => "hide", :id => "yaml-spinner"
+    #yaml-compare-results{:style => "margin-top:10px;"}
+
+:javascript
+  $(function() {
+    new HashDiffDemo.views.HomeView();
+  })

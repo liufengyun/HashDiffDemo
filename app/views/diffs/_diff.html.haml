@@ -1,0 +1,6 @@
+.change-box
+  .change-box-inner
+    =render :partial => "diffs/change", :collection => @changes
+    - if @changes.size == 0
+      %p No changes
+

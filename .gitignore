@@ -23,7 +23,6 @@ db/*.sqlite3
 **.war
 *.rbc
 *.sassc
-.rspec
 .redcar/
 .sass-cache
 /config/config.yml
@@ -45,8 +44,6 @@ db/*.sqlite3
 /capybara-*.html
 /gems
 /rerun.txt
-/spec/requests
-/spec/routing
 /spec/views
 /specifications
 

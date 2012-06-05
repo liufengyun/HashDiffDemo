@@ -15,7 +15,7 @@ class HashDiffDemo.views.HomeView
       obj1 = $("#json-one-area").val()
       obj2 = $("#json-two-area").val()
 
-      $.get "/diff", {obj1: obj1, obj2: obj2, type: "json"}, (response)->
+      $.post "/diff", {obj1: obj1, obj2: obj2, type: "json"}, (response)->
         $("#json-spinner").toggleClass("hide")
         $("#json-compare-results").html(response)
 
@@ -25,6 +25,6 @@ class HashDiffDemo.views.HomeView
       obj1 = $("#yaml-one-area").val()
       obj2 = $("#yaml-two-area").val()
 
-      $.get "/diff", {obj1: obj1, obj2: obj2, type: "yaml"}, (response)->
+      $.post "/diff", {obj1: obj1, obj2: obj2, type: "yaml"}, (response)->
         $("#yaml-spinner").toggleClass("hide")
         $("#yaml-compare-results").html(response)

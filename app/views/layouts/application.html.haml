@@ -12,6 +12,8 @@
     = csrf_meta_tags
     = yield(:head)
   %body
+    = render :partial => "layouts/facebook"
+
     /%header.navbar.navbar-fixed-top
     /
       %nav.navbar-inner
@@ -20,6 +22,8 @@
     #main{:role => "main"}
       .container
         %h2 HashDiff
+        = render :partial => "layouts/twitter"
+        .fb-like{"data-href" => "http://hashdiff.herokuapp.com/", "data-layout" => "button_count", "data-width" => "450"}
         .content
           .row-fluid
             .span12

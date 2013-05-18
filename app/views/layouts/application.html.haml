@@ -9,10 +9,12 @@
     %meta{:content => "", :name => "author"}
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    = stylesheet_link_tag    "bootstrap_and_overrides"
     = csrf_meta_tags
     = yield(:head)
   %body
     = render :partial => "layouts/facebook"
+    = render :partial => "layouts/twitter"
 
     /%header.navbar.navbar-fixed-top
     /
@@ -21,10 +23,12 @@
           = render 'layouts/navigation'
     #main{:role => "main"}
       .container
-        %h2 HashDiff
-        .fb-like{"data-href" => "http://hashdiff.herokuapp.com/", "data-layout" => "button_count", "data-width" => "40"}
-        = render :partial => "layouts/twitter"
-        .content
+        %h2{:style => "float:left"} HashDiff
+        %div{:style => "float:right; height:36px; margin-top:15px"}
+          %a.twitter-share-button{"data-url" => "http://hashdiff.herokuapp.com/", :href => "https://twitter.com/share"} Tweet
+        .fb-like{"data-href" => "http://hashdiff.herokuapp.com/", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450", :style => "float:right; heigth:36px; margin-top:15px"}
+
+        .content{:style => "margin-top:42px"}
           .row-fluid
             .span12
               = render 'layouts/messages'
